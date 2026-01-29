@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Tarefas</title>
+
+  <!-- MOBILE FIRST -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2a2a2a">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>📋 Minhas Tarefas</h1>
+
+    <!-- CONTADOR -->
+    <p id="contador">0 pendente(s) de 0</p>
+
+    <!-- INPUT -->
+    <input
+      type="text"
+      id="tarefa"
+      placeholder="Digite uma tarefa..."
+    >
+
+    <!-- BOTÕES -->
+    <button onclick="adicionarTarefa()">Adicionar</button>
+    <button onclick="alternarTema()">🌙 Modo escuro</button>
+    <button onclick="limparConcluidas()">🧹 Limpar concluídas</button>
+    <button onclick="resetarTudo()">♻️ Resetar tudo</button>
+
+    <!-- LISTA -->
+    <ul id="lista"></ul>
+  </div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+
+  <script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js");
+  }
+</script>
+
+<audio id="clickSound" src="https://www.soundjay.com/buttons/sounds/button-16.mp3"></audio>
+
+</body>
+</html>
